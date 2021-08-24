@@ -1,0 +1,119 @@
+@import '~caroucssel/dist/caroucssel';
+.carousel-wrapper{
+    overflow: hidden;
+    .carousel{
+        @include caroucssel();
+        @include caroucssel-snap($at: 100%);
+        .item{
+            width: 100%;
+        }
+
+        .carousel-controls{
+            .carousel-control{
+                border-radius: 50%;
+                cursor: pointer;
+                &.active{
+                    >div{
+                        background-color: rgb(137, 137, 137);
+                    }
+                }
+                &:hover{
+                    background-color: rgba(137, 137, 137, 0.4); 
+                }
+            }
+        }
+
+        @media screen and (min-width: 768px) {
+            @include caroucssel-snap($at: 50%);
+            .item{
+                width: 50%;
+            }
+        }
+
+        @media screen and (min-width: 900px) {
+            .item{
+                width: 33%;
+            }
+        }
+
+        @media screen and (min-width: 1200px) {
+            .item{
+                width: 25%;
+            }
+        }
+    }
+
+    .pagination{
+        text-align: center;
+        margin-top: 4rem;
+        li{
+            display: inline-block;
+            button{
+                text-indent: 9999px;
+                white-space: nowrap;
+                overflow: hidden;
+                padding: 8px;
+                border-radius: 50%;
+                span{
+                    display: block;
+                    border-radius: 50%;
+                    background-color: #FFF;
+                    width: 6px;
+                    height: 6px;
+                }
+
+                &:hover{
+                    background-color: #FFFFFF55;
+                }
+
+                &[disabled]{
+                    cursor: default;
+                    span{
+                        background-color: #a1a1a1;
+                    }
+                }
+            }
+
+        }
+    }
+    .button{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 50%;
+        background-color: var(--primary);
+        z-index:2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+
+        &.btn-prev{
+            left: 20px;
+        }
+
+        &.btn-next{
+            right: 20px;
+        }
+
+        &:hover{
+            cursor: pointer;
+        }
+    }
+}
+
+.partners{
+    img{
+        filter: brightness(62%);
+    }
+
+    .pagination{
+        li{
+            button{
+                span{
+                    background-color: var(--mediumgrey);
+                }
+            }
+        }
+    }
+}

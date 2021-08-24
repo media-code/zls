@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;500;700;900&display=swap');
+
+
+@import './mixins';
+@import './fonts';
+@import './form';
+@import './about';
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+
+:root {
+	--white: #FFFFFF;
+	--primary: #FF4F3C;
+	--secondary: #000000;
+	--darkgrey: #303030;
+	--mediumgrey: #C5C5C5;
+	--softgrey: #7a7a7a;
+	--grey: #F1F1F1;
+	--lightgrey: #F8F8F8;
+}
+
+
+@import './carousel';
+
+.md\:leading-custom {
+	line-height: 0.87 !important;
+}
+
+body{
+	nav{
+		transition: background-color 0.1s ease;
+	}
+	&.scrolled
+		nav{
+			background-color: #fff !important;
+			z-index: 99;
+			transition: background-color 0.1s ease;
+		}
+}
+
+.hero{
+	height: 100vh;
+
+	.bg-container {
+		background-image: url('/storage/bg-images/ZLS-home-hero-image-mobiel-min.jpg');
+		background-size: 100%;
+		background-position: bottom right;
+		background-repeat: no-repeat;
+	}
+}
+
+
+.horizontal-line{
+	width: 250%;
+	max-width: 250%;
+	transform: translateX(-20%);
+}
+
+.the-heart-of-the-brain{
+	background-image: url('/storage/bg-images/ZLS-home-heart-brain-min.jpg');
+	background-size: 100%;
+	background-position: bottom left;
+	background-repeat: no-repeat;
+}
+
+
+.video{
+	max-width: 1920px;
+	.play-btn{
+		transform: translate(-50%, -50%);
+
+		i{
+			-webkit-text-stroke-width: 2px;
+	  		-webkit-text-stroke-color: black;
+	  		color: transparent;
+		}
+
+		&:hover{
+			opacity: 0.8;
+			cursor: pointer;
+		}
+	}
+}
+
+.pioneer{
+	background-image: url('/storage/bg-images/pioneer.png');
+	background-repeat: no-repeat;
+	background-size: 256%;
+	background-position: 75% 0%;
+}
+
+
+@media (min-width: 640px) {
+	.hero{
+		
+		.bg-container {
+			
+		}
+	}
+}
+
+
+@media (min-width: 769px) {
+	.hero{
+		
+		.bg-container {
+			background-image: url('/storage/bg-images/ZLS-home-hero-image-min.jpg');
+		}
+	}
+
+	.horizontal-line{
+		width: 100%;
+		max-width: 100%;
+		transform: translateX(0%);
+	}
+
+	.pioneer{
+		background-size: 90% auto;
+		background-position: top right;
+	}
+}

@@ -1,0 +1,28 @@
+input{
+	&:focus{
+		outline: 0 !important;
+		box-shadow: none !important;
+		border-color: var(--primary) !important;
+		border-width: 2px;
+	}
+
+	&.filled{
+		background-color: #FFF;
+		border-color: var(--primary) !important;
+		border-width: 2px;
+	}
+
+}
+
+@media (min-width: 769px) {
+	input{
+		&:focus{
+			border-color: #000 !important;
+		}
+
+		&.filled{
+			border-color: #000 !important;
+		}
+
+	}
+}

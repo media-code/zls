@@ -1,0 +1,12 @@
+.about{
+	background-image: url(/storage/images/about-banner.png);
+	background-size: auto 70vh;
+	background-repeat: no-repeat;
+	background-position: top center;
+}
+
+@media (max-width: 768px) {
+	.about{
+		background-size: 300% auto !important;
+	}
+}
